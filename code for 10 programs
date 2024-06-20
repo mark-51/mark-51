@@ -1,0 +1,167 @@
+'''1) Python program to add two numbers.
+2) Python program to check if a string is palindrome or not.
+3) Python program for finding factorial of a number.
+4) Python program for finding sum of first n natural number.
+5) Python program for counting the digits in a number.
+6) Python program for printing Multiplication tables.
+7) Python program for converting Kilometers to miles.
+8) Python program for finding largest number in a list.
+9) Python program for finding n-th Fibonacci number .
+10) Python program for checking a number is prime or not.'''
+#1) python program to add two numbers
+def add():
+    a=int(input("enter the first number to be added"))
+    b=int(input("enter the second number to be added"))
+    addition=a+b
+    print("the addition of the two numbers is:",addition)
+    return addition
+#2) Python program to check if a string is palindrome or not.
+def check_palindrome():
+    s=input("Enter the string to be checked for palindrome")
+    s.upper()
+    print(s)
+    if s==s[::-1]:
+        print("the string is pallindrome")
+    else:
+        print("the string is not palindrome")
+#3) Python program for finding factorial of a number.
+def factorial():
+    n=int(input("enter the number whose factorial to be found out"))
+    m=1
+    while n>0:
+        m=m*n
+        n=n-1
+    print("the factorial of the given number is:",m)
+#4) Python program for finding sum of first n natural number.
+def sum():
+    n=int(input("enter the no. of natural numbers to be added"))
+    sum=0
+    for i in range(n):
+        m=int(input("enter the natural numbers to be added"))
+        sum=sum+m
+    print("the sum of given natural numbers is",sum)
+#5) Python program for counting the digits in a number.
+def digits():
+    n=int(input("enter the number"))
+    s=str(n)
+    count=0
+    for i in s:
+        count+=1
+    print("the no. of digits in a number are:",count)
+#6) Python program for printing Multiplication tables.
+def multiplication():
+    n=int(input("enter a number for multiplication table"))
+    print(n,"tables\n")
+    for i in range(1,11):
+        print(n,'x',i,'=',n*i)
+#7) Python program for converting Kilometers to miles.
+def convert():
+    n=float(input("enter the kilometers"))
+    m=n/1.60934
+    print("the entered kilometers in miles are:",m)
+#8) Python program for finding largest number in a list.
+def find_largest():
+    n=int(input("enter the no. of elements to be entered in the list"))
+    l=[]
+    for i in range(n):
+        m=int(input("enter the elements to be entered"))
+        l.append(m)
+    largest=l[0]
+    for i in l:
+        if i > largest:
+            largest=i
+    print("the largest number is:",largest)
+#9) Python program for finding n-th Fibonacci number .
+def find_fibonacci():
+    n=int(input("enter the number from where you want to start the fibonacci sequence"))
+    m=int(input("enter upto how many terms"))
+    l=[]
+    l.append(n)
+    length=len(l)
+    if length<2:
+        l.append(n)
+        length+=1
+    while length<m:
+            s=l[length-1]+l[length-2]
+            l.append(s)
+            length+=1
+    print("the fibonacci numbers are:",l)
+#10) Python program for checking a number is prime or not.
+def check_prime(q=None):
+    q=int(input("enter the number to be checked for prime numbers"))#taking user input"
+    if q>1:
+        for i in range(2,int(q/2)+1):#taking half of n because the highest factor of a even number is the half of the number, except the number itself 
+            if q%i==0:
+                print(q,"is not a prime number")
+                break#so that it need not to check again and need not to print again
+        else:#if the number is a prime number
+            print(q,"is a prime number")
+    else:
+        print(q,"is a prime number")#this is for number 1, as it is a prime number
+
+def menu():
+    request=int(input('''1) Python program to add two numbers.
+2) Python program to check if a string is palindrome or not.
+3) Python program for finding factorial of a number.
+4) Python program for finding sum of first n natural number.
+5) Python program for counting the digits in a number.
+6) Python program for printing Multiplication tables.
+7) Python program for converting Kilometers to miles.
+8) Python program for finding largest number in a list.
+9) Python program for finding n-th Fibonacci number .
+10) Python program for checking a number is prime or not.
+11)Exit
+Please enter the serial number (in between 1 and 11) for the associated program:'''))
+    if request==1:
+        add()
+    elif request==2:
+        check_palindrome()
+    elif request==3:
+        factorial()
+    elif request==4:
+        sum()
+    elif request==5:
+        digits()
+    elif request==6:
+        multiplication()
+    elif request==7:
+        convert()
+    elif request==8:
+        find_largest()
+    elif request==9:
+        find_fibonacci()
+    elif request==10:
+        check_prime()
+    elif request==11:
+        return
+    else:
+        t=(1,2,3,4,5,6,7,8,9,10,11)
+        if request<1 or request>11:
+            request=input("Please enter a valid number in between 1 and 11")
+menu()
+import sys
+h=input("Do you want more programs ?(y/n)")
+if h=='y':
+    f=True
+elif h=='n':
+    sys.exit()
+else:
+    h=input("please either enter y for yes or n for no")
+while f:
+    n=int(input("enter how many times do you want to enter serial numbers"))
+    if n==0:
+        while not n:
+            s=input("do you want to exit ? (y/n)")
+            if s=='y':
+                sys.exit()
+            elif s=='n':
+                n=int(input("Please enter number greator than 0"))
+            else:
+                print("please either enter y for yes or n for no")
+    else :
+        for i in range(n):
+            g=int(input("enter the serial number (in between 1 and 11) for the associated program: "))
+            request=g
+            if request==11:
+                sys.exit()
+            menu()
